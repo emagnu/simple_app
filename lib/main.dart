@@ -4,7 +4,11 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 // Import FILES
-// import './screens/home_page.dart';
+import './constants/constants.dart';
+import './screens/home_page.dart';
+import './screens/signin_page.dart';
+import './screens/signup_page.dart';
+import './screens/simpleapp_page.dart';
 // Import PARTS
 // PROVIDERS
 
@@ -29,13 +33,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.teal,
       ),
       // home: const HomePage(),
-      onGenerateInitialRoutes:
-          client.auth.currentSession != null ? '/simpleapp' : '/',
+      initialRoute: client.auth.currentSession != null ? '/SimpleAppPage' : '/',
       routes: {
         '/': (context) => const HomePage(),
         '/signin': (context) => const SignInPage(),
         '/signup': (context) => const SignUpPage(),
-        '/simpleapp': (context) => const SimplePage(),
+        '/simpleapp': (context) => const SimpleAppPage(),
       },
     );
   }

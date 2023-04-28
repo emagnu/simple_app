@@ -9,7 +9,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 /// Initialise [Client] for Supabase instance
 // Get a reference your Supabase client
-final supabase = Supabase.instance.client;
+final client = Supabase.instance.client;
 
 /// Small Gap
 const smallGap = SizedBox(height: 15.0);
